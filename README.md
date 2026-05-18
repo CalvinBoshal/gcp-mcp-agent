@@ -20,5 +20,5 @@ Instead of treating LLMs as simple chatbots, this project uses the **Model Conte
 
 1. **Clone the repo:**
    ```bash
-   git clone git clone https://github.com/CalBoshal/gcp-mcp-agent.git
+   git clone https://github.com/CalvinBoshal/gcp-mcp-agent.git
    cd gcp-mcp-agent
