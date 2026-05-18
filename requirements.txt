@@ -1,0 +1,4 @@
+fastmcp
+google-cloud-asset
+google-cloud-billing
+google-cloud-resourcemanager
