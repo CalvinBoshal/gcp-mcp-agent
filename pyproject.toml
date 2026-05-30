@@ -1,0 +1,14 @@
+[project]
+name = "billing-agent"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "fastmcp>=3.2.4",
+    "google-cloud-asset>=4.3.0",
+    "google-cloud-billing>=1.19.0",
+    "google-cloud-compute>=1.47.0",
+    "google-cloud-resource-manager>=1.17.0",
+    "google-cloud-storage>=3.10.1",
+]
