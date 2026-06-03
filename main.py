@@ -22,6 +22,45 @@ def check_status() -> str:
     """Tells the AI if the root agent is awake and functioning."""
     return "The BillingAgent is awake, secure, and ready for duty!"
 
+# ---------------------------------------------------------------------
+# # 3.5. Resource Layer — Exposing the Ambient Environment Map
+# ---------------------------------------------------------------------
+@mcp.resource("frugally://gcp/topology-map")
+def get_gcp_topology() -> str:
+    """
+    Exposes a read-only, structural map of the active GCP architecture.
+    Provides the AI with continuous background awareness of managed assets.
+    """
+    import json
+    
+    # In production, this pulls from a lightweight local cache database.
+    # It acts as the "printed floor plan" for our Agentic Architect.
+    topology = {
+        "governed_environment": "GCP Multi-Project Cluster",
+        "status": "Healthy",
+        "active_projects": [
+            {
+                "id": "billing-agent-lab",
+                "billing_enabled": True,
+                "monitored_services": ["Compute Engine", "Cloud Storage", "Vertex AI"],
+                "regions": ["us-central1", "europe-west1"]
+            },
+            {
+                "id": "project-af726956-0770-41a5-849",
+                "billing_enabled": True,
+                "monitored_services": ["Compute Engine", "BigQuery"],
+                "regions": ["us-central1"]
+            }
+        ],
+        "architectural_policies": {
+            "approved_compute_zones": ["us-central1-a", "europe-west1-b"],
+            "max_allowed_idle_days": 7,
+            "enforced_tags": ["env:production", "cost-center:finops"]
+        }
+    }
+    
+    return json.dumps(topology, indent=2)
+
 # ---------------------------------------------------------------------------
 # 4. Mount sub-servers (tools become available with their natural names)
 # ---------------------------------------------------------------------------

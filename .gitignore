@@ -8,3 +8,12 @@ wheels/
 
 # Virtual environments
 .venv
+
+# GCP credentials — NEVER commit service account keys
+*.json
+gcp-service-account.json
+service-account*.json
+
+# Environment variables
+.env
+.env.*
